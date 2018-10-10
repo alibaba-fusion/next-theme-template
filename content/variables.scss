@@ -1,0 +1,6 @@
+{% for compName, compGroup in variables %}
+// ------------------------ {{compName}} ------------------------ //
+{% for variable in compGroup %}
+{{variable.name}}: {{variable.value | safe}} !default;
+{% endfor %}
+{% endfor %}
