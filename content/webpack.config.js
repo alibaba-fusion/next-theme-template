@@ -4,7 +4,6 @@ const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const chalk = require('chalk');
 
 const buildTime = {
@@ -25,50 +24,43 @@ module.exports = function () {
       publicPath: '/dist/',
     },
     resolve: {
-      extensions: ['*', '.js', '.vue', '.json', '.md', '.scss', '.css'],
-      alias: {
-        'vue': 'vue/dist/vue.esm.js'
-      }
+      extensions: ['*', '.js', '.jsx', '.json', '.md', '.scss', '.css']
     },
-    externals: [{
-      'vue': {
-        root: 'Vue',
-        commonjs: 'vue',
-        commonjs2: 'vue',
-        amd: 'vue'
-      }
-    }],
+    externals: {
+      react: {
+        root: 'React',
+        commonjs2: 'react',
+        commonjs: 'react',
+        amd: 'react',
+      },
+      'react-dom': {
+        root: 'ReactDOM',
+        commonjs2: 'react-dom',
+        commonjs: 'react-dom',
+        amd: 'react-dom',
+      },
+    },
     module: {
       rules: [{
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          transformToRequire: {
-            video: 'src',
-            source: 'src',
-            img: 'src',
-            image: 'xlink:href'
-          }
-        }
-      }, {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'babel-loader',
         options: {
           presets: [require('babel-preset-env')]
-        }
+        },
+        exclude: /node_modules/,
       }, {
         test: /\.s?css$/,
         use: ExtractTextPlugin.extract({
           use: ['css-loader', 'sass-loader'],
           fallback: 'style-loader'
-        })
+        }),
+        exclude: /node_modules/,
       }]
     },
     plugins: [
       new webpack.LoaderOptionsPlugin({
         minimize: true
       }),
-      new VueLoaderPlugin(),
       new ExtractTextPlugin({
         filename: '[name].css',
         allChunks: true
