@@ -1,0 +1,8 @@
+{% if library.npm === '@alifd/next' %}
+// 引用主题变量
+@import "variables.scss";
+
+// 引用基础主题
+@import "~{{library.npm}}/index-noreset.scss";
+
+{% endif %}
