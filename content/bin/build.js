@@ -30,6 +30,13 @@ function build(minimize = false) {
   });
 }
 
+function emendLess() {
+  let less = fs.readFileSync(path.join(BASE_DIR, 'variables.less'), 'utf8');
+  
+  less = less.replace(/\/\/ lessUnsupport[\s\S]*/g, '');
+  fs.writeFileSync(path.join(BASE_DIR, 'variables.less'), less)
+}
+
 co(function*() {
   // build
   console.log('# build');
@@ -37,10 +44,23 @@ co(function*() {
   console.log('# build minimize');
   yield build(true);
 
+  // 修正less 
+  console.log('# emend less')
+  emendLess()
+
   // remove bin dir
   console.log('# remove bin dir');
   rmdir.sync(path.join(BASE_DIR, 'webpack.config.js'));
   rmdir.sync(path.join(BASE_DIR, 'bin'));
+
+  const depName = '{{library.name}}';
+  const depPureName = depName.split('/').slice(-1);
+
+  let css = fs.readFileSync(path.join(BASE_DIR, `dist/${depPureName}.css`), 'utf8');
+  fs.writeFileSync(path.join(BASE_DIR, 'index.css'), css);
+
+  let mincss = fs.readFileSync(path.join(BASE_DIR, `dist/${depPureName}.min.css`), 'utf8');
+  fs.writeFileSync(path.join(BASE_DIR, 'index.min.css'), mincss);
 
   try {
     fs.unlinkSync(path.join(distPath, 'next-noreset.min.js'));

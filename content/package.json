@@ -3,7 +3,8 @@
   "version": "{{version}}",
   "author": "{{author}}",
   "scripts": {
-    "build-theme": "node bin/build.js"
+    "build-theme": "tnpm run sass2less && node bin/build.js",
+    "sass2less": "sass2less variables.scss variables.less"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -11,6 +12,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-runtime": "^6.26.0",
+    "less-plugin-sass2less": "^1.x",
     "@alifd/babel-preset-next": "^2.0.0",
     "chalk": "^2.4.1",
     "co": "^4.x",

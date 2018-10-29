@@ -1,0 +1,7 @@
+@import "variables.scss";
+
+{% for key, value in extraIcons %}
+.#{$css-prefix}icon-{{key}}::before {
+    content: $icon-content-{{key}};
+}
+{% endfor %}
