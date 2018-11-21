@@ -36,21 +36,18 @@ const buildTime = {
   end: new Date().getTime()
 };
 
-const depName = '{{library.name}}';
-const depPureName = depName.split('/').slice(-1);
-
 module.exports = function ({minimize = false}) {
   const cwd = process.cwd();
 
   const config = {
     entry: {
-      [depPureName]: ['./index.js', './index.scss'],
-      [`${depPureName}-noreset`]: './index-noreset.scss'
+      next: ['./index.js', './index.scss'],
+      ['next-noreset']: './index-noreset.scss'
     },
     output: {
       path: path.join(cwd, 'dist'),
       publicPath: '/dist/',
-      library: depPureName,
+      library: 'Next',
       libraryTarget: 'umd'
     },
     resolve: {

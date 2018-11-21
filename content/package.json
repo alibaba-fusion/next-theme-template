@@ -34,10 +34,12 @@
     "webpack-cli": "^3.x"
   },
   "dependencies": {
-    "react": "^16.x",
-    "react-dom": "^16.x",
-    "moment": "^2.x",
     "{{library.npm}}": "^{{library.version}}"
+  },
+  "peerDependencies": {
+    "moment": "^2.22.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "license": "ISC",
   "publishConfig": {

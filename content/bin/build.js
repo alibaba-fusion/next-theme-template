@@ -53,15 +53,6 @@ co(function*() {
   rmdir.sync(path.join(BASE_DIR, 'webpack.config.js'));
   rmdir.sync(path.join(BASE_DIR, 'bin'));
 
-  const depName = '{{library.name}}';
-  const depPureName = depName.split('/').slice(-1);
-
-  let css = fs.readFileSync(path.join(BASE_DIR, `dist/${depPureName}.css`), 'utf8');
-  fs.writeFileSync(path.join(BASE_DIR, 'index.css'), css);
-
-  let mincss = fs.readFileSync(path.join(BASE_DIR, `dist/${depPureName}.min.css`), 'utf8');
-  fs.writeFileSync(path.join(BASE_DIR, 'index.min.css'), mincss);
-
   try {
     fs.unlinkSync(path.join(distPath, 'next-noreset.min.js'));
     fs.unlinkSync(path.join(distPath, 'next-noreset.js'));
