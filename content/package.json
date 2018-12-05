@@ -34,7 +34,7 @@
     "webpack-cli": "^3.x"
   },
   "dependencies": {
-    "{{library.npm}}": "^{{library.version}}"
+    "{{library.npm}}": "{{library.version}}"
   },
   "peerDependencies": {
     "moment": "^2.22.1",
