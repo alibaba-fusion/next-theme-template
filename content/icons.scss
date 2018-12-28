@@ -1,6 +1,6 @@
 @import "variables.scss";
 
-{% for key, value in extraIcons %}
+{% for key, value in theme.icon_extra %}
 .#{$css-prefix}icon-{{key}}::before {
     content: $icon-content-{{key}};
 }
