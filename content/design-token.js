@@ -1,3 +1,3 @@
 'use strict'
 
-module.exports = {{tokens | safe}}
+module.exports = {{tokens | dump | safe}}
