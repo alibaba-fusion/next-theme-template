@@ -6,6 +6,7 @@
     "build-theme": "tnpm run sass2less && node bin/build.js",
     "sass2less": "sass2less variables.scss variables.less"
   },
+  "main": "index.js",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
