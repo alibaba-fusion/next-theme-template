@@ -5,7 +5,6 @@ const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const CssSplitWebpackPlugin = require("css-split-webpack-plugin").default;
-const chalk = require("chalk");
 const babelConfig = require("@alifd/babel-preset-next")({}, { runtime: true });
 const autoprefixer = require("autoprefixer");
 
@@ -43,7 +42,7 @@ const buildTime = {
   end: new Date().getTime()
 };
 
-module.exports = function({ minimize = false }) {
+module.exports = function ({ minimize = false }) {
   const config = {
     entry: {
       next: ["./index.scss", "./index.js"],
@@ -130,11 +129,11 @@ Licensed under MIT (https://github.com/alibaba-fusion/next/blob/master/LICENSE)`
       new webpack.ProgressPlugin((percentage, msg) => {
         if (percentage === 0) {
           buildTime.start = new Date().getTime();
-          console.log(chalk.blue("> webpack bundle is start."));
+          console.log("> webpack bundle is start.");
         }
         if (percentage === 1) {
           buildTime.end = new Date().getTime();
-          console.log(chalk.blue("> webpack bundle is finished. (Spent %s ms)"), buildTime.end - buildTime.start);
+          console.log("> webpack bundle is finished. (Spent %s ms)", buildTime.end - buildTime.start);
         }
       })
     ]
