@@ -26,13 +26,13 @@
     "postcss-loader": "^2.0.6"
   },
   "dependencies": {
-    "{{library.npm}}": "~{{library.version}}"
+    "{{library.npm}}": "~{{library.baseline}}"
   },
   "peerDependencies": {
     "moment": "^2.22.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "{{library.npm}}": "~{{library.version}}"
+    "{{library.npm}}": "~{{library.baseline}}"
   },
   "license": "ISC",
   "publishConfig": {
