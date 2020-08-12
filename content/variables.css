@@ -1,0 +1,13 @@
+:root {
+    {% set varReg = r/^\$[^(\s+(\*|\+|-|\/)\s+)]+\s*$/%}
+    {% set shadowReg = r/^shadow-maker.*/ %}
+    {% for compName, compGroup in variables %}
+    /* ------------------------ {{compName}} ------------------------ */
+    {% for variable in compGroup %}
+    {% set value = variable.rawValue or variable.value %}
+    {{'--' + variable.name.slice(1)}}: {{
+        ('var(--' + value.slice(1) + ')' if varReg.test(value) and not shadowReg.test(value) else variable.value ) | safe
+    }};
+    {% endfor %}
+    {% endfor %}
+}
