@@ -1,7 +1,7 @@
 {
-  "name": "@alifd/next-theme-template",
-  "version": "0.2.20",
-  "description": "next theme template",
-  "author": "no-repeat <chenpeng.mini@gmail.com>",
-  "license": "ISC"
+	"name": "@alifd/next-theme-template",
+	"version": "0.3.0-alpha",
+	"description": "next theme template",
+	"author": "no-repeat <chenpeng.mini@gmail.com>",
+	"license": "ISC"
 }

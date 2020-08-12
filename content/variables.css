@@ -1,0 +1,8 @@
+:root {
+    {% for compName, compGroup in variables %}
+    /* ------------------------ {{compName}} ------------------------ */
+    {% for variable in compGroup %}
+    {{'--' + variable.name.slice(1)}}: {{variable.value | safe}};
+    {% endfor %}
+    {% endfor %}
+}
