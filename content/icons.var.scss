@@ -4,4 +4,4 @@
 .next-icon-{{key}}::before {
     content: var(--icon-content-{{key}});
 }
-{% endfor %}
+{%- endfor -%}
