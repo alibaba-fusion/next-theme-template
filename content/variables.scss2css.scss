@@ -1,0 +1,18 @@
+@import "~@alifd/next/lib/core/util/_mixin.scss";
+@import "~@alifd/next/lib/core/util/_function.scss";
+@import "~@alifd/next/lib/core/util/_varMap.scss";
+
+{% set varReg = r/(shadow\-)|(size-base)|(s-\d+)|(s-zero)|(dark-bg-color)|(dark-bg-opacity)|(color-white)|(color-transparent)|(icon-reset)|(font-family)|(icon-[smlx]+)|(grid-[mlsx]+)|(grid-col-fixed-width)|(icon-font-path)|(icon-font-name)|(css-prefix)|(class-prefix)|(color-black)|(icon-prefix)|(icon-font-family)/ %}
+{% for compName, compGroup in variables %}
+{% for variable in compGroup %}
+{% set name = variable.name %}
+{% if not varReg.test(name) %}
+{{name}}: {{
+    ('var(--' + name.slice(1) + ', ' + variable.value + ')') | safe
+}};
+$varMap: map-merge($varMap, ({{('var(--' + name.slice(1) + ', ' + variable.value + ')') | safe}}: {{variable.value | safe}}));
+{% else %}
+{{name}}: {{ variable.value | safe }};
+{% endif %}
+{% endfor %}
+{% endfor %}

@@ -145,8 +145,8 @@ Licensed under MIT (https://github.com/alibaba-fusion/next/blob/master/LICENSE)`
   const { version } = require("@alifd/next/package.json");
   //1.21.0版本新增next.var.css文件
   if (version >= "1.21.0") {
-    config.entry["next-noreset.var"] = "./index-noreset.var.css";
-    config.entry["next.var"] = "./index.var.css";
+    config.entry["next-noreset.var"] = "./index-noreset.var.scss";
+    config.entry["next.var"] = "./index.var.scss";
   }
 
   if (minimize) {

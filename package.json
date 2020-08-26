@@ -3,5 +3,8 @@
   "version": "0.3.0",
   "description": "next theme template",
   "author": "no-repeat <chenpeng.mini@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "release": "npm publish && tnpm sync @vacio/next-theme-template"
+  }
 }
