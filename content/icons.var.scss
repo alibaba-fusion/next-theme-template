@@ -1,5 +1,3 @@
-@import 'variables.css';
-
 {% for key, value in theme.icon_extra %}
 .next-icon-{{key}}::before {
     content: var(--icon-content-{{key}});

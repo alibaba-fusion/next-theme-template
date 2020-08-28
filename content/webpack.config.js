@@ -7,6 +7,7 @@ const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const CssSplitWebpackPlugin = require("css-split-webpack-plugin").default;
 const babelConfig = require("@alifd/babel-preset-next")({}, { runtime: true });
 const autoprefixer = require("autoprefixer");
+const cssvarFallback = require("postcss-custom-properties");
 
 const css = (options = {}) => [
   {
@@ -25,6 +26,7 @@ const css = (options = {}) => [
         autoprefixer({
           browsers: ["last 2 versions", "Firefox ESR", "> 1%", "ie >= 9"],
         }),
+        cssvarFallback(),
       ],
     },
   },

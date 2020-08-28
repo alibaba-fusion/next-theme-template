@@ -1,10 +1,10 @@
 {
   "name": "@alifd/next-theme-template",
-  "version": "0.3.2",
+  "version": "0.3.7",
   "description": "next theme template",
   "author": "no-repeat <chenpeng.mini@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "release": "npm publish && tnpm sync @vacio/next-theme-template"
+    "release": "npm publish && tnpm sync @alifd/next-theme-template"
   }
 }

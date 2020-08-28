@@ -9,4 +9,10 @@
     }};
     {% endfor %}
     {% endfor %}
+
+    /* 兼容0.x */
+    --line-0: var(--line-zero);
+    --shadow-0: var(--shadow-zero);
+    --corner-right-angle: var(--corner-zero);
+    --s-0: var(--s-zero);
 }
