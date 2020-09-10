@@ -24,7 +24,8 @@
     "autoprefixer": "^7.1.4",
     "fast-sass-loader": "^1.2.5",
     "postcss-custom-properties": "^9.1.1",
-    "postcss-loader": "^2.0.6"
+    "postcss-loader": "^2.0.6",
+    "postcss-calc": "^7.0.4"
   },
   "dependencies": {
     "{{library.npm}}": "~{{library.baseline}}"
