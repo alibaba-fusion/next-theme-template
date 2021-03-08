@@ -4,8 +4,9 @@
     /* ------------------------ {{compName}} ------------------------ */
     {% for variable in compGroup %}
     {% set rawValue = variable.rawValue %}
+    {% set value = ('var(--' + variable.value.slice(1) + ')') if varReg.test(variable.value) else variable.value %}
     {{'--' + variable.name.slice(1)}}: {{
-        ('var(--' + rawValue.slice(1) + ', ' + variable.value + ')' if varReg.test(rawValue) else variable.value) | safe
+        ('var(--' + rawValue.slice(1) + ', ' + value + ')' if varReg.test(rawValue) else value) | safe
     }};
     {% endfor %}
     {% endfor %}
