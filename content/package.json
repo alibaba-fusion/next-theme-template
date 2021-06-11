@@ -27,9 +27,6 @@
     "postcss-loader": "^2.0.6",
     "postcss-calc": "^7.0.4"
   },
-  "dependencies": {
-    "{{library.npm}}": "~{{library.baseline}}"
-  },
   "peerDependencies": {
     "moment": "^2.22.1",
     "react": "^16.0.0",
