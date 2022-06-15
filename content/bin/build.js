@@ -40,6 +40,7 @@ function emendLess() {
 
 async function buildTheme() {
   // build
+  const start = Date.now();
   console.log("# build");
   await build();
   console.log("# build minimize");
@@ -64,6 +65,8 @@ async function buildTheme() {
   } catch (e) {
     console.log("remove next-noreset.js or next-noreset.min.js failed: ", e);
   }
+  console.log('# build end, cost: ', Date.now() - start);
+  process.exit(0);
 }
 
 buildTheme();
