@@ -1,14 +1,7 @@
 {
   "name": "@alifd/next-theme-template",
-  "version": "0.3.14",
+  "version": "0.2.22",
   "description": "next theme template",
   "author": "no-repeat <chenpeng.mini@gmail.com>",
-  "license": "ISC",
-  "scripts": {
-    "test": "node test/index.js",
-    "release": "npm publish && tnpm sync @alifd/next-theme-template"
-  },
-  "devDependencies": {
-    "nunjucks": "^3.2.3"
-  }
+  "license": "ISC"
 }

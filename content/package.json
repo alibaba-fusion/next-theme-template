@@ -23,17 +23,15 @@
     "webpack": "^3.0.0",
     "autoprefixer": "^7.1.4",
     "fast-sass-loader": "^1.2.5",
-    "postcss-custom-properties": "^9.1.1",
-    "postcss-loader": "^2.0.6",
-    "postcss-calc": "^7.0.4"
+    "postcss-loader": "^2.0.6"
   },
   "dependencies": {
     "{{library.npm}}": "~{{library.baseline}}"
   },
   "peerDependencies": {
     "moment": "^2.22.1",
-    "react": ">=16.0.0",
-    "react-dom": ">=16.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "{{library.npm}}": "~{{library.baseline}}"
   },
   "license": "ISC",

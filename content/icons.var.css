@@ -1,8 +1,0 @@
-{%- for item in variables.icon -%}
-{%- set name = item.name.replace('$icon-content-', '') -%}
-{% if name in theme.icon_extra %}
-.next-icon-{{name}}::before {
-    content: var(--icon-content-{{name}}, {{item.value | safe}});
-}
-{%- endif -%}
-{%- endfor -%}
